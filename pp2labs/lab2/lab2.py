@@ -117,6 +117,19 @@ print(type(mylist))
 #7
 thislist = list(("apple", "banana", "cherry")) # note the double round-brackets
 print(thislist)
+#ex1
+fruits = ["apple", "banana", "cherry"]
+print(fruits[1])
+#ex2
+fruits = ["apple", "banana", "cherry"]
+fruits[0]="kiwi"
+#ex3
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")
+#ex4
+fruits = ["apple", "banana", "cherry"]
+fruits.insert(1, "lemon")
+
 
 
     
