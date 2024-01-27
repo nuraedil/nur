@@ -107,7 +107,7 @@ x = txt.lower() #hello world
  
 #Python Strings ex7 
 txt = "Hello World" 
-x = txt.replace("H", "J") #Jello World 
+x = txt.replace("H", "J") #Hello World 
  
 #Python Strings ex8 
 age = 36 
