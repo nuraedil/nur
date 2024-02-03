@@ -344,7 +344,282 @@ fruits.remove("banana")
 #ex5
 fruits = {"apple", "banana", "cherry"}
 fruits.discard("banana")
- 
-    
 
 
+#Python dictionaries 
+
+#1
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict)
+#2
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict["brand"])
+#3
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+  "year": 2020
+}
+print(thisdict)
+#4
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(type(thisdict))
+#5
+thisdict = dict(name = "John", age = 36, country = "Norway")
+print(thisdict)
+#6
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = thisdict["model"]
+print(x)
+#7
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+x = thisdict.keys()
+
+print(x)
+#ex1
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(car.get("model"))
+#ex2
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+car["year"] = 2020
+#ex3
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+car["color"] = "red"
+#ex4
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+car.pop("model")
+#ex5
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+car.clear()
+
+
+#Python if else
+#1
+a = 33
+b = 200
+if b > a:
+  print("b is greater than a")
+#2
+a = 33
+b = 33
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+#3
+a = 200
+b = 33
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+else:
+  print("a is greater than b")
+#4
+a = 2
+b = 330
+print("A") if a > b else print("B")
+#ex1
+a = 50
+b = 10
+if a > b:
+  print("Hello World")
+#ex2
+a = 50
+b = 10
+if a != b:
+  print("Hello World")
+#ex3
+a = 50
+b = 10
+if a == b:
+  print("YES")
+else:
+  print("NO") 
+#ex4
+a = 50
+b = 10
+if a == b:
+  print("1")
+elif a > b:
+  print("2")
+else:
+  print("3")
+#ex5
+a = 50
+b = 10
+c = 50
+d = 10
+if a == b and c == d:
+  print("Hello")
+#ex6
+a = 50
+b = 10
+c = 50
+d = 10
+if a == b or c == d:
+  print("Hello") 
+#ex7
+if 5 > 2:
+  print("YES")
+#ex8
+a = 2
+b = 5
+print("YES") if a == b else print("NO")
+#ex9
+a = 2
+b = 50
+c = 2
+if a == c or b == c:
+  print("YES")
+
+
+#Python while loops
+#1
+i = 1
+while i < 6:
+  print(i)
+  i += 1
+#2
+i = 1
+while i < 6:
+  print(i)
+  if i == 3:
+    break
+  i += 1
+#3
+i = 0
+while i < 6:
+  i += 1
+  if i == 3:
+    continue
+  print(i)
+#4
+i = 1
+while i < 6:
+  print(i)
+  i += 1
+else:
+  print("i is no longer less than 6")
+#ex1
+i = 1
+while i < 6:
+  print(i)
+  i += 1
+#ex2 
+i = 1
+while i < 6:
+  if i == 3:
+    break 
+  i += 1 
+#ex3
+i = 0
+while i < 6:
+  i += 1
+  if i == 3:
+    continue
+  print(i)
+#ex4
+i = 1
+while i < 6:
+  print(i)
+  i += 1
+else:
+  print("i is no longer less than 6")
+
+
+#python for loops
+#1
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  print(x)
+#2
+for x in "banana":
+  print(x)
+#3
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  print(x)
+  if x == "banana":
+    break
+#4
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    continue
+  print(x)
+#5
+for x in range(6):
+  print(x)
+#6
+for x in range(2, 6):
+  print(x)
+#7
+for x in range(2, 30, 3):
+  print(x)
+#8
+for x in range(6):
+  print(x)
+else:
+  print("Finally finished!")
+#ex1
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  print(x)
+#ex2
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    continue
+  print(x)  
+#ex3
+for x in range(6):
+  print(x)
+#ex4
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    break
+  print(x)
