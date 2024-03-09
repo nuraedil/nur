@@ -1,55 +1,81 @@
-#Python regex 
 import re 
+file = open("/Users/damirnurmagambetov/Desktop/PP2_Labs/Lab_5/text.txt", "r") 
+content = file.read() 
  
-def match_a_followed_by_zero_or_more_b(text): 
-    pattern = r'ab*' 
-    return re.findall(pattern, text) 
+# Task1 
+# Write a Python program that matches a string that has an 'a' followed by zero or more 'b''s. 
+result1 = re.findall(r'ab*', content) 
  
-def match_a_followed_by_two_to_three_b(text): 
-    pattern = r'ab{2,3}' 
-    return re.findall(pattern, text) 
+# Task2 
+# Write a Python program that matches a string that has an 'a' followed by two to three 'b'. 
+pattern = r'ab{2,3}' 
+result2 = re.findall(pattern, content) 
  
-def find_sequences_of_lowercase_with_underscore(text): 
-    pattern = r'[a-z]+_[a-z]+' 
-    return re.findall(pattern, text) 
+# Task3 
+# Write a Python program to find sequences of lowercase letters joined with a underscore. 
+pattern = r'[a-z]+\_' 
+result3 = re.findall(pattern, content) 
  
-def find_sequences_of_one_uppercase_followed_by_lowercase(text): 
-    pattern = r'[A-Z][a-z]+' 
-    return re.findall(pattern, text) 
+# Task4 
+# Write a Python program to find the sequences of one upper case letter followed by lower case letters. 
+pattern = r'[A-Z][a-z]+' 
+result4 = re.findall(pattern, content) 
  
-def match_a_followed_by_anything_ending_in_b(text): 
-    pattern = r'a.*?b$' 
-    return re.findall(pattern, text) 
+# Task5 
+# Write a Python program that matches a string that has an 'a' followed by anything, ending in 'b'. 
+pattern = r'a.+b$' 
+result5 = re.search(pattern, content) 
  
-def replace_spaces_commas_dots_with_colon(text): 
-    pattern = r'[ ,.]' 
-    return re.sub(pattern, ':', text) 
+# Task6 
+# Write a Python program to replace all occurrences of space, comma, or dot with a colon. 
+pattern = r'[ ,.]' 
+replace = ':' 
+result6 = re.sub(pattern, replace, content) 
  
-def snake_case_to_camel_case(text): 
-    words = text.split('_') 
-    return ''.join(word.capitalize() for word in words) 
+# Task7 
+# Write a python program to convert snake case string to camel case string. 
+pattern = r'_+(\w)' 
+def replace(match): 
+    return match.group(1).upper() 
+result7 = re.sub(pattern, replace, content) 
  
-def split_string_at_uppercase_letters(text): 
-    pattern = r'[A-Z][a-z]*' 
-    return re.findall(pattern, text) 
+# Task8 
+# Write a Python program to split a string at uppercase letters. 
+pattern = r'([a-z])([A-Z])' 
+result8 = re.sub(pattern, r'\1 \2', content) 
  
-def insert_spaces_between_words_starting_with_capital_letters(text): 
-    pattern = r'([A-Z][a-z]+)' 
-    return re.sub(pattern, r' \1', text).strip() 
+# Task9 
+# Write a Python program to insert spaces between words starting with capital letters. 
+pattern = r'([a-z0-9])([A-Z])' 
+replace = r'\1 \2' 
+result9 = re.sub(pattern, replace, content) 
  
-def camel_case_to_snake_case(text): 
-    pattern = r'(?<!^)(?=[A-Z])' 
-    return '_'.join(re.split(pattern, text)).lower() 
+# Task10 
+# Write a Python program to convert a given camel case string to snake case. 
+pattern = r'([a-z0-9])([A-Z])' 
+replace = r'\1_\2' 
+result10 = re.sub(pattern, replace, content) 
+answer10 = result10.lower() 
  
-# Test cases 
-test_string = "ab abbbb acbcab abc abcb aabbcc" 
-print("Matches for 'a' followed by zero or more 'b's:", match_a_followed_by_zero_or_more_b(test_string)) 
-print("Matches for 'a' followed by two to three 'b's:", match_a_followed_by_two_to_three_b(test_string)) 
-print("Sequences of lowercase letters joined with an underscore:", find_sequences_of_lowercase_with_underscore(test_string)) 
-print("Sequences of one uppercase letter followed by lowercase letters:", find_sequences_of_one_uppercase_followed_by_lowercase(test_string)) 
-print("Matches for 'a' followed by anything, ending in 'b':", match_a_followed_by_anything_ending_in_b(test_string)) 
-print("After replacing spaces, commas, and dots with colons:", replace_spaces_commas_dots_with_colon(test_string)) 
-print("Camel case to snake case:", snake_case_to_camel_case("snake_case_string")) 
-print("Splitting string at uppercase letters:", split_string_at_uppercase_letters("CamelCaseString")) 
-print("Inserting spaces between words starting with capital letters:", insert_spaces_between_words_starting_with_capital_letters("CamelCaseString")) 
-print("Camel case to snake case:", camel_case_to_snake_case("CamelCaseString"))
+def printing(): 
+    print("Answer for Task 1:", result1) 
+ 
+    print("Answer for Task 2:", result2) 
+ 
+    print("Answer for Task 3:", result3) 
+ 
+    print("Answer for Task 4:", result4) 
+ 
+    print("Answer for Task 5:", result5) 
+ 
+    print("Answer for Task 6:", result6) 
+ 
+    print("Answer for Task 7:", result7) 
+ 
+    print("Answer for Task 8:", result8) 
+ 
+    print("Answer for Task 9:", result9) 
+ 
+    print("Answer for Task 10:", answer10) 
+ 
+printing()
