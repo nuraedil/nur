@@ -1,5 +1,5 @@
 import re 
-file = open("/Users/damirnurmagambetov/Desktop/PP2_Labs/Lab_5/text.txt", "r") 
+file = open("/Users/nuraedil/Desktop/PP2_Labs/Lab_5/text.txt", "r") 
 content = file.read() 
  
 # Task1 
