@@ -32,4 +32,5 @@ while run:
         if event.type == pygame.QUIT:
             run = False
     pygame.display.update()
+    tickrate.tick(FPS)
 pygame.quit()
