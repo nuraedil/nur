@@ -2,42 +2,47 @@ import pygame
 
 pygame.init()
 
-quality = (1940, 1000)
-surface = pygame.display.set_mode((quality))
-name_pro = pygame.display.set_caption("Circle")
+# Определяем размеры экрана и создаем его
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
-white = (255,255,255)
-red = (255,0,0)
+# Устанавливаем заголовок окна
+pygame.display.set_caption("Moving Circle")
 
-center_w = quality[0] // 2
-center_h = quality[1] // 2
-run = True
-FPS = 60
-tickrate = pygame.time.Clock()
+# Цвета
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
 
-x = center_w
-y = center_h
+# Начальные координаты и скорость перемещения круга
+x, y = WIDTH // 2, HEIGHT // 2
+speed = 20
 
-while run == True:
-    surface.fill(white)
+# Основной цикл программы
+running = True
+clock = pygame.time.Clock()
+while running:
+    screen.fill(WHITE)  # Очищаем экран белым цветом
 
-    history_press = pygame.key.get_pressed()
-    if history_press[pygame.K_UP] == True and y >= 41:
-        y -= 20
-    if history_press[pygame.K_LEFT] == True and x >= 41:
-        x -= 20
-    if history_press[pygame.K_RIGHT] == True and x <= 1900:
-        x += 20
-    if history_press[pygame.K_DOWN] == True and y <= 950:
-        y += 20
-
-    pygame.draw.circle(surface , red, (x, y), 25)
-
+    # Обработка событий
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            run = False
+            running = False
 
-    pygame.display.update()
-    tickrate.tick(FPS)
+    # Проверяем нажатые клавиши
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_UP] and y >= 41:
+        y -= speed
+    if keys[pygame.K_DOWN] and y <= HEIGHT - 41:
+        y += speed
+    if keys[pygame.K_LEFT] and x >= 41:
+        x -= speed
+    if keys[pygame.K_RIGHT] and x <= WIDTH - 41:
+        x += speed
+
+    # Рисуем круг
+    pygame.draw.circle(screen, RED, (x, y), 25)
+
+    pygame.display.update()  # Обновляем экран
+    clock.tick(60)  # Устанавливаем FPS
 
 pygame.quit()
